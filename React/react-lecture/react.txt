@@ -1,0 +1,75 @@
+npx create-react-app name-of-app
+
+const rc = React.createElement( type, [props], [...children])
+ReactDOM.render(rc, document.getElementById('root')) (we won't run our react this way)
+
+"Components" are small isolated code blocks that control the UI on your react 
+application. Components are where we render our UI state and accept UI data. 
+React component has two basic usages. 
+
+- OOP -> Object oriented Programming. 
+- Functional Composition -> eeehhhhh kinda. 
+We will see more of this style when we get to redux
+
+
+Two types of components 
+// class :new syntax below
+class MyComponent extends Component {} //extends Component {} is the react
+
+// function :familiar syntax
+function MyComponent (){}
+const MyComponent = () => {}
+
+Render Function & JSX
+// class
+class MyComponent extends Component {
+    render(){
+        return(
+            <h1>Hello DC</h1>
+        )
+    }
+}
+What is JSX?
+Javascript as XML: We can use JSX in multiple ways. We can assign them the elements that can 
+be used inside render functions or we can utilize them
+
+Properties aka Props
+Props are how we pass data between components or across the application. 
+Props are usually passed from the top dowm starting at the “said” root component.
+<MyComponent prop1="a cool prop value" prop2="a cooler value"/>
+Usage
+render(){
+    return(
+        <div>{this.props.prop1}</div>
+    )
+}
+
+Super() //sub-classes because
+super(): is super important (comedic drumroll to hats). The reason is
+because we cannot access our props from the parent component with out.
+Usage
+//class component
+class MyComponent extends Component {
+    constructor(props){
+        super(props) //cant get access to props inside Component unless called super(props)
+    }
+    render(){
+        return(
+            <h1>Hello DC</h1>
+        )
+    }
+}
+
+What is React Router
+Route Matching(Mapper): React Router is about mapping a path to a function 
+or a component NOTE: we’ve seen this type of behavior before
+
+How does it work
+React router intercepts the request and looks for the route / path and returns the matched component. 
+React router handles this at the DOM level.
+
+
+Components are isolated codes that are reusable, similar to functions. 
+Props are use to pass data through components 
+second syntax
+You need super(props)
